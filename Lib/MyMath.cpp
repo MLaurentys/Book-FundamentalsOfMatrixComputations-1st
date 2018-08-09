@@ -1,0 +1,49 @@
+#include "MyMath.h"
+
+namespace MyMath {
+    void addIndentity(std::vector<std::vector<float>>& matrix, float scalar) {
+        for (int i = 0; i < matrix.size(); i++) {
+            matrix[i][i] += scalar;
+        }
+    }
+    std::vector<float> getColumn(const std::vector<std::vector<float>>& matrix, int index) {
+        std::vector<float> column;
+        for (int i = 0; i < matrix.size(); ++i) {
+            column.push_back(matrix[i][index]);
+        }
+        return column;
+    }
+    float dotProduct(std::vector<float> vector1, std::vector<float> vector2) {
+        //assume vector1.size() = vector2.size()
+        float sum = 0;
+        for (int i = 0; i < vector1.size(); ++i) {
+            sum += vector1[i] * vector2[i];
+        }
+        return sum;
+    }
+
+    float power(int number, int exponent) {
+        //TO DO: fast exponentiation function
+        for (int i = 0; i < exponent; ++i){
+            number *= number;
+        }
+        return number;
+    }
+    void scalarTimesVector(std::vector<float>& vector, float scalar) {
+        for (int i = 0; i < vector.size(); ++i) {
+            vector[i] *= scalar;
+        }
+    }
+    std::vector<std::vector<float>> outerProduct(std::vector<float>& vec1, std::vector<float>& vec2) {
+        std::vector<std::vector<float>> retMatrix;
+        for (int i = 0; i < vec1.size(); i++)
+        {
+            retMatrix.push_back(std::vector<float>());
+            for (int j = 0; j < vec2.size(); j++)
+            {
+                retMatrix[i].push_back(vec1[i] * vec2[j]);
+            }
+        }
+        return retMatrix;
+    }
+}
