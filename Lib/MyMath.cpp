@@ -22,9 +22,9 @@ namespace MyMath {
         return sum;
     }
 
-    float power(int number, int exponent) {
+    float power(float number, float exponent) {
         //TO DO: fast exponentiation function
-        for (int i = 0; i < exponent; ++i){
+        for (int i = 1; i < exponent; ++i){
             number *= number;
         }
         return number;
