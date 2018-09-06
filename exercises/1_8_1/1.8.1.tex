@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\begin{document}
+
+Exercise $1.8.1$\\
+
+
+After $k - 1$ steps of the Gaussian elimination process the coefficient matrix has been transformed to the form
+$$
+B = 
+\begin{bmatrix}
+	B_{11}	& B_{12}\\
+	0		& B_{22}
+\end{bmatrix}
+$$
+where $B_{11}$ is $(k - 1)$ by $(k-1)$ and upper triangular.\\
+
+Prove that $B$ is singular if the first column of $B_{22}$ is zero. (\textit{Remark:} The fact that $B_{11}$ is upper triangular is of no consequence). \\
+
+\noindent\rule{\textwidth}{1pt}
+
+Answer\\
+
+From definition: If $B$ non-singular, $det B \neq 0$\\
+
+Calculate determinant of $B$ using the coefficient matrix form and applying Laplace along the first column always until reaching line column $k$. Note that doing the same on column $k$ gives \textit{0} times the rest of determinant.
+$$
+det B = \prod_i^{k-1}a_{ii}\times0
+$$
+$$
+det B = 0
+$$ 
+
+Remember that since $B$ is not non-singular, $B$ is singular.
+\end{document}
