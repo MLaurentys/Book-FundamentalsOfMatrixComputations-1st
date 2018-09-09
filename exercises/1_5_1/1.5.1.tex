@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+
+\setlength{\parindent}{0in}
+
+\begin{document}
+Exercise $1.5.1$\\
+
+
+Let 
+$
+A = 
+\begin{bmatrix}
+	4	&	0\\
+	0	&	9
+\end{bmatrix}
+$.\\\\
+
+
+a)Prove that $A$ is positive definite.\\
+
+b)Calculate the Cholesky factor of $A$.\\
+
+c)Find three other lower-triangular matrices $G$ such that $A = GG^T$.\\
+
+d)Let A be any positive-definite matrix of dimension $n-by-n$. How many lower-triangular matrices $G$ such that $A + GG^T$ are there?
+
+\noindent\rule{\textwidth}{1pt}
+
+Answer\\
+
+a)\\
+Remember: $A$ is positive definite if it is \textit{real, squared, symmetric,} and \textit{satisfies $x^TAx > 0$} for any non-zero $x \in R^n$.
+
+$A$ is real and squared (given). Since all elements outside the main diagonal are $0$, $A$ is symmetric.\\
+Without losing generality, $x^T = [x_1, x_2]$. Then,
+
+\begin{equation}
+\begin{split}
+x^TAx&= 
+\begin{bmatrix}
+	x_1	&	x_2
+\end{bmatrix}
+\begin{bmatrix}
+	4	&	0\\
+	0	&	9
+\end{bmatrix}
+\begin{bmatrix}
+	x_1\\
+	x_2
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+	4x_1	&	9x_2
+\end{bmatrix}
+\begin{bmatrix}
+	x_1\\
+	x_2
+\end{bmatrix}\\
+&=
+4x_1^2 + 9x_2^2
+\end{split}
+\end{equation}
+
+Since $4x_1^2 + 9x_2^2 > 0$ \textit{(1)}, $x^TAx > 0$.\\
+Hence $A$ is positive definite.\\
+
+b)\\
+Remember: If $A = GG^T$, $G$ is lower triangular with only positive numbers on the main diagonal, then $G$ is the \textit{Cholesky factor} of $A$.\\
+
+Using the following recipes:
+$$g_{ii} = + \sqrt{a_{ii} - \sum_{k=1}^{i-1}g^2_{ik}}$$\\
+$$g_{ij} = \dfrac{(a_{ij} - \displaystyle{\sum_{k=1}^{j-1}g_{ik}g_{jk})}}{g_{jj}}, i > j$$
+
+$g_{11} = + \sqrt{4} = 2$\\
+$g_{21} = 0$\\
+$g_{22} = + \sqrt{9} = 3$\\
+$g_{12} = 0$\\
+Hence, $G = 
+\begin{bmatrix}
+	2	&	0\\
+	0	&	3
+\end{bmatrix}\\
+$\\
+
+c)\\
+ It is worth noticing that the following additional matrices are \textbf{not} Cholesky factors, which is unique.\\
+
+$G_1 = 
+ \begin{bmatrix}
+	-2	&	0\\
+	0	&	3
+\end{bmatrix}\\
+$\\
+$G_1 = 
+ \begin{bmatrix}
+	2	&	0\\
+	0	&	-3
+\end{bmatrix}\\
+$\\
+$G_1 = 
+ \begin{bmatrix}
+	-2	&	0\\
+	0	&	-3
+\end{bmatrix}\\
+$\\
+
+d)\\
+Notice $a_{ii}$ comes from the squared values of the main diagonal in $G$. Therefore, the sign is lost and does not have an effect on $A$.
+
+$A$, \textit{n-by-n,} has $2^n$ lower triangular matrices decompositions.
+\end{document}
