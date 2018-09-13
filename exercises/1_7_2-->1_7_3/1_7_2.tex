@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+
+Exercise $1.7.2$\\
+
+Verify the assertion of the previous paragraph.
+
+As seen in the prompt, the assertion is 
+$$
+[\textit{\^A}|\textit{\^b}] = M[A|\textit{b}]
+$$\\
+\noindent\rule{\textwidth}{1pt}
+
+Answer:\\
+
+Remember we can group $A$ and $b$.\\
+$
+A =
+\begin{bmatrix}
+	a_{11} & \hdots & a_{1m}\\
+	\vdots & \ddots & \vdots\\
+	a_{n1} & \hdots & a_{nm}
+\end{bmatrix}
+,b =
+\begin{bmatrix}
+	b_{1}\\
+	\vdots\\
+	b_{n}\\
+\end{bmatrix}
+, [A|b] = 
+\begin{bmatrix}
+	a_{11} & \hdots & a_{1m} & b_{1}\\
+	\vdots & \ddots & \vdots & \vdots\\
+	a_{n1} & \hdots & a_{nm} & b_{n}
+\end{bmatrix}
+$\\
+\\
+
+In the same way:
+$
+[\textit{\^A}|\textit{\^b}] = 
+\begin{bmatrix}
+	a_{11} & \hdots & a_{1m} & b_{1}\\
+	\vdots & & \vdots & \vdots\\
+	a_{i1} + m.a_{j1} & & a_{im} + a_{jm} & a_{i} + m.b_{j}\\
+	\vdots & & \vdots & \vdots\\
+	a_{j1} & & a_{ij} & b_{j}\\
+	\vdots & & \vdots &\vdots\\
+	a_{n1} & \hdots & a_{nm} & b_{n}
+\end{bmatrix}
+$\\
+
+Let start from $I.[A|b] = [A|B]$.\\
+We know the change should be on the $i$th line of the matrix $[A|b]$. We known the origin  for this line is the $i$th line of the identity matrix. If we change the line from 
+$
+\begin{bmatrix}
+	0 \hdots 0 \; 1 \; 0 \hdots 0
+\end{bmatrix}
+$
+to 
+$
+\begin{bmatrix}
+	1 \hdots 1 \hdots 1
+\end{bmatrix}
+$
+, we known the result would be all elements of the $j$th column showing up on the respective $(a|b)_{ij}$. Now that it is clear, we eliminate all undesired 1s, getting:
+$
+\begin{bmatrix}
+	0 \hdots 0 \; 1 \; 0 \hdots 0 \; 1 \; 0 \hdots	0
+\end{bmatrix}
+$
+. All that is missing is fix the coeffiecient. Since the $j$th row must be multiplied by m, we make the final change: 
+$
+\begin{bmatrix}
+	0 \hdots 0 \; m \; 0 \hdots 0 \; 1 \; 0 \hdots	0
+\end{bmatrix}
+$\\
+
+Notice that everything that was changed is on the $i$th line of the identity matrix we began with. Also notice that with these changes we got exactly the matrix $M$.
+\end{document}

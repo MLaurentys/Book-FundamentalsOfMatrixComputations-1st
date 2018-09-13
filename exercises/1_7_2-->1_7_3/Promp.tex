@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{blkarray}	
+\usepackage[T1]{fontenc}
+\begin{document}
+
+Exercises $1.7.2$  and $1.7.3$ prompt:\\
+
+Suppose for example that we wish to add \textit{m} times the \textit{j}th row to the\textit{i}th row, transforming [A|\textit{b}] to [\^A|\textit{\^b}]. You can easily verify that
+$$
+[\text{\^A}|\textit{\^b}] = M[A|\textit{b}]
+$$\\
+where:\\
+
+$$
+M  
+= 
+\begin{blockarray} {cccccccc}
+	& & & j\\	
+	& & & \downarrow\\
+	\begin{block} {c[ccccccc]}
+			& 1\\
+			& & \ddots\\
+			& & & 1\\
+			& & & & \ddots\\
+			i\rightarrow& & & m & & 1\\
+			& & & & & & \ddots\\
+			& & & & & & &1\\
+	\end{block}
+\end{blockarray}
+$$\\
+
+is the matrix that differs from the identity matrix only in that it has an \textit{m} in the (\textit{i, j}) position. $M$ is called an \textit{elementary matrix} of type 1.
+\end{document}

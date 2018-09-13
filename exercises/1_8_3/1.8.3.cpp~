@@ -1,0 +1,28 @@
+#include <vector>
+#include <cmath>
+#define MINIMUN_VALUE 0.00001
+//matrix is a NxN matrix
+//rowInterchanges is a R^N vector initialized with -1
+int gaussianWithPartialPivoting(vector<vector<float>>& matrix, vector<int>& rowInterchanges){
+  int columnLen = rowInterchanges.size();
+  int rowLen = matrix.size();
+  for(int i = 0; i< rowLen; ++i){
+    //find pivot
+    float biggestAbsolute = 0;
+    float contender;
+    int indexToUse = -1;
+    for (int j = i +
+	   1; j < columnLen; ++j){
+        if((contender = abs(matrix[i][j])) > biggestAbsolute){
+	  biggestAbsolute = contender;
+	  indexToUse = j;
+      }
+    }
+    if(biggestAbsolute < MINIMUN_VALUE){
+      return 1;
+    }
+    if(indexToUse != -1){
+      
+    }
+  }
+}
