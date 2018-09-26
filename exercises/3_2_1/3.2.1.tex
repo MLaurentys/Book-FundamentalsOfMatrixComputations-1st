@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+
+Exercise $3.2.1$\\
+
+(a) Show that if $Q$ is orthogonal,then $Q^{-1}$ is orthogonal. (b) Show that if $Q_1$ and $Q_2$ are othogonal, then $Q_1Q_2$ is orthogonal.
+
+\noindent\rule{\textwidth}{1pt}
+
+Answer\\
+
+a) By definition: 
+$$Q^tQ = I$$
+is orthogonal.\\
+Inverting both sides: 
+$$(Q^t)^{-1}Q^{-1} = I^{-1}$$
+Using the orthogonal matrices property $Q^t = Q^{-1}$:
+$$(Q^{-1})^tQ^{-1} = I^{-1}$$
+$$(Q^{-1})^tQ^{-1} = I$$
+Therefore, $Q^{-1}$ is orthogonal, from the same definition.\\
+
+b)Show that $(Q_1Q_2)^t(Q_1Q_2) = I$
+\begin{equation*}
+\begin{gathered}
+Q_1^tQ_1 = I\\
+Q_1^tQ_1Q_2 = Q_2\\
+Q_2^tQ_1^tQ_1Q_2 = Q_2^tQ_2\\
+(Q_2^tQ_1^t)Q_1Q_2 = (Q_2^tQ_2)\\
+(Q_1Q_2)^tQ_1Q_2 = I\\
+\end{gathered}
+\end{equation*}
+\end{document}

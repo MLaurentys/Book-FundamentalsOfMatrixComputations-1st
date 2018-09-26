@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+
+Exercise $3.2.3$\\
+
+Prove that if $Q$ satisfies $(Qx, Qy) = (x,y)$ for all $x, y \in \!R^n$, then $Q$ is orthogonal.
+
+\noindent\rule{\textwidth}{1pt}
+
+Answer\\
+
+Notice that (., .) means inner product.
+\begin{equation}
+(x, y) = x^ty
+\end{equation}
+\begin{equation}
+(Qx, Qy) = (Qx)^t(Qy) = x^tQ^tQy
+\end{equation}
+Show that:
+$x^ty = x^tQ^tQy \rightarrow Q$ orthogonal\\
+
+Contradiction: assuming $Q^tQ = M \neq I$
+\begin{equation*}
+\begin{gathered}
+x^ty = x^tQ^tQy\\
+x^ty = x^t(My)\\
+x^ty = x^t\hat{y}\\
+\Vert x^ty \Vert = \Vert x^t\hat{y} \Vert
+\end{gathered}
+\end{equation*}
+\end{document}
